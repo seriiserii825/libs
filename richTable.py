@@ -5,7 +5,7 @@ def richTable(title, columns, rows):
     table = Table(title=title)
 
     for column in columns:
-        table.add_column(column, style="gray", no_wrap=True)
+        table.add_column(column, style="magenta", no_wrap=True)
     for row in rows:
         table.add_row(*row)
 
