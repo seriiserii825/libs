@@ -1,9 +1,15 @@
 import os
+import plyer
+import pyperclip
 
 def addToClipBoard(text):
-    command = 'echo ' + text.strip() + '| xclip -selection clipboard'
-    print(f"command: {command}")
-    os.system(command)
+    pyperclip.copy(text.strip())
+    plyer.notification.notify(
+        title='Buffer',
+        message=text,
+        app_name='Buffer',
+        timeout=5
+    )
 
 def addToClipBoardFile(file):
     command = f"cat {file} | xclip -selection clipboard"
